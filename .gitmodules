@@ -52,3 +52,6 @@
 [submodule "bundle/jinja-syntax"]
 	path = bundle/jinja-syntax
 	url = https://github.com/uggedal/jinja-vim.git
+[submodule "bundle/coffeescript"]
+	path = bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
