@@ -217,6 +217,33 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 " CoffeeScript
 autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
+" HTML and templates
+fun! s:SelectHTML()
+let n = 1
+while n < 50 && n < line("$")
+  " check for jinja
+  if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
+    set ft=jinja.html
+    return
+  endif
+  " check for mako
+    if getline(n) =~ '<%\(def\|inherit\)'
+      set ft=mako
+      return
+    endif
+    " check for genshi
+    if getline(n) =~ 'xmlns:py\|py:\(match\|for\|if\|def\|strip\|xmlns\)'
+      set ft=genshi
+      return
+    endif
+    let n = n + 1
+  endwhile
+  " go with html
+  set ft=html
+endfun
+
+autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
+
 
 " ====================
 " Plugin configuration
