@@ -46,3 +46,9 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = https://github.com/sorin-ionescu/python.vim.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = https://github.com/othree/html5.vim.git
+[submodule "bundle/jinja-syntax"]
+	path = bundle/jinja-syntax
+	url = https://github.com/uggedal/jinja-vim.git
