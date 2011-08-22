@@ -34,9 +34,6 @@
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "bundle/python-syntax"]
-	path = bundle/python-syntax
-	url = https://github.com/olivierverdier/python-syntax.vim.git
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
