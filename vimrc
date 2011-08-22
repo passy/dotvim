@@ -39,6 +39,9 @@ set mousemodel=popup
 " Show the ruler. All. The. Time.
 set ruler
 
+" Show line numbers.
+set number
+
 " Code folding is neat.
 set foldmethod=indent
 set foldlevel=99
@@ -213,6 +216,9 @@ let python_highlight_all=1
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 \ formatoptions+=croq softtabstop=4 smartindent
 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
+" Sass
+autocmd FileType sass setlocal shiftwidth=2 textwidth=0 softtabstop=4
 
 " CoffeeScript
 autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
