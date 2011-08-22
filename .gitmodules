@@ -43,3 +43,6 @@
 [submodule "bundle/jslint"]
 	path = bundle/jslint
 	url = https://github.com/passy/jslint.vim.git
+[submodule "bundle/python-syntax"]
+	path = bundle/python-syntax
+	url = https://github.com/sorin-ionescu/python.vim.git
