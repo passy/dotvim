@@ -41,6 +41,7 @@ set ruler
 
 " Show line numbers.
 set number
+set relativenumber
 
 " Code folding is neat.
 set foldmethod=indent
