@@ -40,7 +40,7 @@ set mousemodel=popup
 set ruler
 
 " Show line numbers.
-set number
+" set number
 set relativenumber
 
 " Code folding is neat.
@@ -282,6 +282,10 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
+
+" Yankring
+
+let g:yankring_history_dir="~/.vim/session"
 
 " =============
 " Personal crap
