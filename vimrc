@@ -85,7 +85,7 @@ endif
 set colorcolumn=+0
 
 " Keep some more lines visible
-set scrolloff=5
+set scrolloff=3
 
 " Better search
 set hlsearch
@@ -104,8 +104,7 @@ set titleold="Terminal"
 set titlestring=%F\ -\ Vim
 
 " Enable filetype extensions
-filetype on
-filetype plugin on
+filetype plugin indent on
 
 " Statusbar and Linenumbers
 " -------------------------
@@ -258,7 +257,7 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 
 " Pathogen initialization
 
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " Command-T
