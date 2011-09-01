@@ -197,6 +197,9 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Hide search highlights
+nnoremap <leader>n :noh<CR>
+
 " ===============
 " Useful snippets
 " ===============
