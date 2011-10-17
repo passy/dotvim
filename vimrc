@@ -75,7 +75,7 @@ set ttyfast
 
 " Font and background
 if has("gui_running")
-    set guifont=Consolas\ 11
+    set guifont=Ubuntu\ Mono\ 12
     set bg=light
 else
     set bg=dark
@@ -217,11 +217,11 @@ autocmd BufEnter * :call HighlightNonBreakingSpace()
 " Python
 let python_highlight_all=1
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-\ formatoptions+=croq softtabstop=4 smartindent
+\ formatoptions+=croq softtabstop=4 smartindent tw=78
 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 " Sass
-autocmd FileType sass setlocal shiftwidth=2 textwidth=0 softtabstop=4
+autocmd FileType sass setlocal shiftwidth=4 textwidth=0 softtabstop=4
 
 " CoffeeScript
 autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
@@ -295,3 +295,5 @@ let g:yankring_history_dir="~/.vim/session"
 
 " Append my own bin/ to the vim internal $PATH
 let $PATH=$PATH . ":~/Applications/bin"
+" Hopefully a fix for the closetag weirdness in jinja templates.
+let b:unaryTagsStack=""
