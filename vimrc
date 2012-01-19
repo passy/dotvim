@@ -258,11 +258,6 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 " Plugin configuration
 " ====================
 
-" Pathogen initialization
-
-call pathogen#infect()
-call pathogen#helptags()
-
 " Command-T
 
 noremap <leader>T <Esc>:CommandTFlush<CR>
@@ -270,8 +265,14 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " Closetag
 
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+let g:closetag_html_style=1
+
+" Pathogen initialization
+
+call pathogen#infect()
+call pathogen#helptags()
 
 " SuperTab
 
@@ -289,11 +290,17 @@ colorscheme solarized
 
 let g:yankring_history_dir="~/.vim/session"
 
+" csapprox for gnome-terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+" Powerline, use cool fonts
+let g:Powerline_symbols = 'fancy'
+
 " =============
 " Personal crap
 " =============
 
 " Append my own bin/ to the vim internal $PATH
 let $PATH=$PATH . ":~/Applications/bin"
-" Hopefully a fix for the closetag weirdness in jinja templates.
-let b:unaryTagsStack=""
