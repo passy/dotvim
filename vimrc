@@ -288,7 +288,7 @@ colorscheme solarized
 
 " Yankring
 
-let g:yankring_history_dir="~/.vim/session"
+let g:yankring_history_dir="/tmp"
 
 " csapprox for gnome-terminal
 if $COLORTERM == 'gnome-terminal'
