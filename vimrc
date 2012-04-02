@@ -265,9 +265,9 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " Closetag
 
-" autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
-" autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-" let g:closetag_html_style=1
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+let g:closetag_html_style=1
 
 " Pathogen initialization
 
