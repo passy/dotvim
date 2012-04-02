@@ -265,9 +265,9 @@ noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 " Closetag
 
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-let g:closetag_html_style=1
+" autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
+" autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+" let g:closetag_html_style=1
 
 " Pathogen initialization
 
@@ -278,25 +278,21 @@ call pathogen#helptags()
 
 let g:SuperTabDefaultCompletionType = "context"
 
+set t_Co=16
+
 " Solarized (colorscheme)
 
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
 colorscheme solarized
 
 " Yankring
 
 let g:yankring_history_dir="/tmp"
 
-" csapprox for gnome-terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
 " Powerline, use cool fonts
 let g:Powerline_symbols = 'fancy'
+
+" ToggleBG
+call togglebg#map("<F5>")
 
 " =============
 " Personal crap
