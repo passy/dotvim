@@ -285,11 +285,13 @@ set t_Co=16
 colorscheme solarized
 
 " Yankring
-
 let g:yankring_history_dir="/tmp"
 
 " Powerline, use cool fonts
 let g:Powerline_symbols = 'fancy'
+
+" Netrw hist
+let g:netrw_home = "/tmp"
 
 " ToggleBG
 call togglebg#map("<F5>")
