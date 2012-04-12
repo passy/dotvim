@@ -226,6 +226,9 @@ autocmd FileType sass setlocal shiftwidth=4 textwidth=0 softtabstop=4
 " CoffeeScript
 autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
+" Go
+autocmd FileType go setlocal noexpandtab
+
 " HTML and templates
 fun! s:SelectHTML()
 let n = 1
@@ -292,6 +295,7 @@ let g:Powerline_symbols = 'fancy'
 
 " Netrw hist
 let g:netrw_home = "/tmp"
+let g:netrw_list_hide = '.*\.py[co]$'
 
 " ToggleBG
 call togglebg#map("<F5>")
