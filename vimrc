@@ -261,10 +261,11 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 " Plugin configuration
 " ====================
 
-" Command-T
+" Command-T/CTRL-P
 
-noremap <leader>T <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
+noremap <leader>t <Esc>:CtrlP<CR>
+noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
+noremap <leader>m <Esc>:CtrlPBuffer<CR>
 
 " Closetag
 
@@ -286,9 +287,6 @@ set t_Co=16
 " Solarized (colorscheme)
 
 colorscheme solarized
-
-" Yankring
-let g:yankring_history_dir="/tmp"
 
 " Powerline, use cool fonts
 let g:Powerline_symbols = 'fancy'
