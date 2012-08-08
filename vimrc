@@ -229,6 +229,9 @@ autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 " Go
 autocmd FileType go setlocal noexpandtab
 
+" Yaml
+autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
+
 " HTML and templates
 fun! s:SelectHTML()
 let n = 1
@@ -255,7 +258,7 @@ while n < 50 && n < line("$")
 endfun
 
 autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
-
+au BufNewFile,BufRead *.sls setf yaml
 
 " ====================
 " Plugin configuration
@@ -266,6 +269,7 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 noremap <leader>t <Esc>:CtrlP<CR>
 noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
 noremap <leader>m <Esc>:CtrlPBuffer<CR>
+noremap <leader>js %!python -m json.tool<CR>
 
 " Closetag
 
@@ -298,9 +302,18 @@ let g:netrw_list_hide = '.*\.py[co]$'
 " ToggleBG
 call togglebg#map("<F5>")
 
+" Don't mess with vim-coffee-script
+let g:syntastic_disabled_filetypes = ['coffee']
+
 " =============
 " Personal crap
 " =============
 
 " Append my own bin/ to the vim internal $PATH
 let $PATH=$PATH . ":~/Applications/bin"
+
+" Fish fix
+if $SHELL =~ 'bin/fish'
+    set shell=/bin/sh
+endif
+
