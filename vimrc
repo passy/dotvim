@@ -26,8 +26,8 @@ set wildmode=list:full
 " We shall not forget.
 set history=3000
 
-" Allow 256 colors inside Gnome Terminal.
-set t_Co=256
+" Allow 16 colors inside Gnome Terminal.
+set t_Co=16
 
 " Enable mouse everywhere.
 set mouse=a
@@ -270,12 +270,17 @@ noremap <leader>t <Esc>:CtrlP<CR>
 noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
 noremap <leader>m <Esc>:CtrlPBuffer<CR>
 noremap <leader>js %!python -m json.tool<CR>
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 
 " Closetag
 
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 let g:closetag_html_style=1
+
+" Haskellmode
+let g:haddock_browser="/usr/bin/google-chrome"
+au BufEnter *.hs compiler ghc
 
 " Pathogen initialization
 
@@ -317,3 +322,18 @@ if $SHELL =~ 'bin/fish'
     set shell=/bin/sh
 endif
 
+" via: http://vim.wikia.com/wiki/HTML_entities
+function HtmlEscape()
+  silent s/&/\&amp;/eg
+  silent s/</\&lt;/eg
+  silent s/>/\&gt;/eg
+endfunction
+
+function HtmlUnEscape()
+  silent s/&lt;/</eg
+  silent s/&gt;/>/eg
+  silent s/&amp;/\&/eg
+endfunction
+
+map <silent> <Leader>he :call HtmlEscape()<CR>
+map <silent> <Leader>hu :call HtmlUnEscape()<CR>
