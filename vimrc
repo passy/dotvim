@@ -295,6 +295,7 @@ set t_Co=16
 
 " Solarized (colorscheme)
 
+" let g:solarized_termcolors=256
 colorscheme solarized
 
 " Powerline, use cool fonts
@@ -323,13 +324,13 @@ if $SHELL =~ 'bin/fish'
 endif
 
 " via: http://vim.wikia.com/wiki/HTML_entities
-function HtmlEscape()
+function! HtmlEscape()
   silent s/&/\&amp;/eg
   silent s/</\&lt;/eg
   silent s/>/\&gt;/eg
 endfunction
 
-function HtmlUnEscape()
+function! HtmlUnEscape()
   silent s/&lt;/</eg
   silent s/&gt;/>/eg
   silent s/&amp;/\&/eg
@@ -337,3 +338,26 @@ endfunction
 
 map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnEscape()<CR>
+" Fix broken syntax highlighting on demand, e.g. when in the middle
+" of a huge docstring in python.
+map <silent> <Leader>s :syntax sync fromstart<CR>
+
+" Fake '|' as text object
+nnoremap di\| T\|d,
+nnoremap da\| F\|d,
+nnoremap ci\| T\|c,
+nnoremap ca\| F\|c,
+nnoremap yi\| T\|y,
+nnoremap ya\| F\|y,
+nnoremap vi\| T\|v,
+nnoremap va\| F\|v,
+
+" Fake '/' as text object
+nnoremap di/ T/d,
+nnoremap da/ F/d,
+nnoremap ci/ T/c,
+nnoremap ca/ F/c,
+nnoremap yi/ T/y,
+nnoremap ya/ F/y,
+nnoremap vi/ T/v,
+nnoremap va/ F/v,
