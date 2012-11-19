@@ -76,3 +76,9 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "bundle/unicode-haskell"]
+	path = bundle/unicode-haskell
+	url = git://github.com/frerich/unicode-haskell.git
+[submodule "bundle/fish-syntax"]
+	path = bundle/fish-syntax
+	url = https://github.com/vim-scripts/fish-syntax.git

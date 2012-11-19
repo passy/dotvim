@@ -96,7 +96,7 @@ set smartcase
 
 " Highlight certain whitespaces
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>.,trail:⌴,extends:#,nbsp:.
 
 " Enable automatic title setting for terminals
 set title
