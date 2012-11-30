@@ -82,3 +82,6 @@
 [submodule "bundle/fish-syntax"]
 	path = bundle/fish-syntax
 	url = https://github.com/vim-scripts/fish-syntax.git
+[submodule "bundle/vim-ls"]
+	path = bundle/vim-ls
+	url = https://github.com/gkz/vim-ls.git

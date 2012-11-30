@@ -224,7 +224,7 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 autocmd FileType sass setlocal shiftwidth=4 textwidth=0 softtabstop=4
 
 " CoffeeScript
-autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
+" autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
 " Go
 autocmd FileType go setlocal noexpandtab
