@@ -85,3 +85,21 @@
 [submodule "bundle/vim-ls"]
 	path = bundle/vim-ls
 	url = https://github.com/gkz/vim-ls.git
+[submodule "bundle/paren-crosshairs"]
+	path = bundle/paren-crosshairs
+	url = https://github.com/chreekat/vim-paren-crosshairs.git
+[submodule "bundle/instant-markdown"]
+	path = bundle/instant-markdown
+	url = https://github.com/chreekat/vim-instant-markdown.git
+[submodule "bundle/nginx-syntax"]
+	path = bundle/nginx-syntax
+	url = https://github.com/evanmiller/nginx-vim-syntax.git
+[submodule "bundle/sleuth"]
+	path = bundle/sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule "bundle/ghcmod"]
+	path = bundle/ghcmod
+	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = https://github.com/Shougo/vimproc.git
