@@ -54,9 +54,9 @@ set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" Backup files live in ~/.vim/session
-set backupdir=~/.vim/session
-set dir=~/.vim/session
+" I don't need no stinking backups
+set nobackup
+set dir=~/.cache/vim/session
 
 " No one likes you, swapfile.
 set noswapfile
@@ -466,6 +466,20 @@ function! HtmlUnEscape()
   silent s/&amp;/\&/eg
 endfunction
 
+function! FixTodoMVC()
+  set ts=4
+  set sw=4
+  set noexpandtab
+  silent %s/function(/function (/eg
+  silent %s/( /(/eg
+  silent %s/ )/)/eg
+  silent %s/ ]/]/eg
+  silent %s/\[ /\[/eg
+endfunction
+
+" Copy the whole file's content into the clipboard
+map <silent> <Leader>hc !xclip -selection c %<CR>
+
 map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 " Fix broken syntax highlighting on demand, e.g. when in the middle
@@ -491,3 +505,6 @@ nnoremap yi/ T/y,
 nnoremap ya/ F/y,
 nnoremap vi/ T/v,
 nnoremap va/ F/v,
+
+" Fuck K!
+nnoremap K k
