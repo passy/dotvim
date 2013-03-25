@@ -109,3 +109,9 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/keyboard_cat"]
+	path = bundle/keyboard_cat
+	url = https://github.com/natw/keyboard_cat.vim
+[submodule "bundle/jade"]
+	path = bundle/jade
+	url = git://github.com/digitaltoad/vim-jade.git
