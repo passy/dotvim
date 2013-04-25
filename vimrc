@@ -466,17 +466,6 @@ function! HtmlUnEscape()
   silent s/&amp;/\&/eg
 endfunction
 
-function! FixTodoMVC()
-  set ts=4
-  set sw=4
-  set noexpandtab
-  silent %s/function(/function (/eg
-  silent %s/( /(/eg
-  silent %s/ )/)/eg
-  silent %s/ ]/]/eg
-  silent %s/\[ /\[/eg
-endfunction
-
 " Copy the whole file's content into the clipboard
 map <silent> <Leader>hc !xclip -selection c %<CR>
 
@@ -508,3 +497,17 @@ nnoremap va/ F/v,
 
 " Fuck K!
 nnoremap K k
+
+function! FixTodoMVC()
+  set ts=4
+  set sw=4
+  set noexpandtab
+  silent %s/function(/function (/eg
+  silent %s/( /(/eg
+  silent %s/ )/)/eg
+  silent %s/ ]/]/eg
+  silent %s/\[ /\[/eg
+  silent %s/){/) {/eg
+  silent %s/,\[/, \[/eg
+endfunction
+
