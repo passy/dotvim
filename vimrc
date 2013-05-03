@@ -96,7 +96,7 @@ set smartcase
 
 " Highlight certain whitespaces
 set list
-set listchars=tab:>.,trail:⌴,extends:#,nbsp:.
+set listchars=tab:>.,trail:…,extends:#,nbsp:.
 
 " Enable automatic title setting for terminals
 set title
@@ -498,6 +498,12 @@ nnoremap va/ F/v,
 " Fuck K!
 nnoremap K k
 
+" pylint is crazy pants. Let's stick to flake8.
+let g:syntastic_python_checkers=['flake8']
+
+" no automatic template insertion
+let g:templates_no_autocmd = 1
+
 function! FixTodoMVC()
   set ts=4
   set sw=4
@@ -510,4 +516,3 @@ function! FixTodoMVC()
   silent %s/){/) {/eg
   silent %s/,\[/, \[/eg
 endfunction
-

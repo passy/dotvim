@@ -124,3 +124,15 @@
 [submodule "bundle/startify"]
 	path = bundle/startify
 	url = https://github.com/mhinz/vim-startify
+[submodule "bundle/editorconfig"]
+	path = bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "bundle/pep8-indent"]
+	path = bundle/pep8-indent
+	url = git@github.com:hynek/vim-python-pep8-indent.git
+[submodule "bundle/template"]
+	path = bundle/template
+	url = git@github.com:aperezdc/vim-template.git
+[submodule "bundle/javascript-syntax"]
+	path = bundle/javascript-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
