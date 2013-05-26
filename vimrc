@@ -467,7 +467,7 @@ function! HtmlUnEscape()
 endfunction
 
 " Copy the whole file's content into the clipboard
-map <silent> <Leader>hc !xclip -selection c %<CR>
+map <silent> <Leader>hc !xclip -selection c %<CR>u
 
 map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnEscape()<CR>
