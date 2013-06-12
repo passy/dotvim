@@ -136,3 +136,6 @@
 [submodule "bundle/rust"]
 	path = bundle/rust
 	url = git://github.com/wting/rust.vim.git
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = git://github.com/marijnh/tern_for_vim.git

@@ -466,14 +466,15 @@ function! HtmlUnEscape()
   silent s/&amp;/\&/eg
 endfunction
 
-" Copy the whole file's content into the clipboard
-map <silent> <Leader>hc !xclip -selection c %<CR>u
-
 map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 " Fix broken syntax highlighting on demand, e.g. when in the middle
 " of a huge docstring in python.
 map <silent> <Leader>s :syntax sync fromstart<CR>
+
+" Better clipping
+vnoremap "+y :!xclip -f -sel clip<CR>
+noremap "+p :r!xclip -o -sel clip<CR>
 
 " Fake '|' as text object
 nnoremap di\| T\|d,
