@@ -124,9 +124,6 @@
 [submodule "bundle/template"]
 	path = bundle/template
 	url = git@github.com:aperezdc/vim-template.git
-[submodule "bundle/javascript-syntax"]
-	path = bundle/javascript-syntax
-	url = git@github.com:jelera/vim-javascript-syntax.git
 [submodule "bundle/rust"]
 	path = bundle/rust
 	url = git://github.com/wting/rust.vim.git
