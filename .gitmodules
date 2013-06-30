@@ -130,3 +130,6 @@
 [submodule "bundle/tern"]
 	path = bundle/tern
 	url = git://github.com/marijnh/tern_for_vim.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = git://github.com/pangloss/vim-javascript.git
