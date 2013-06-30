@@ -133,3 +133,6 @@
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule "bundle/css-syntax"]
+	path = bundle/css-syntax
+	url = https://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
