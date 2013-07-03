@@ -430,8 +430,9 @@ set t_Co=16
 " let g:solarized_termcolors=256
 colorscheme solarized
 
-" Powerline, use cool fonts
-let g:Powerline_symbols = 'fancy'
+" Powerline setup
+set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+
 
 " Netrw hist
 let g:netrw_home = "/tmp"
