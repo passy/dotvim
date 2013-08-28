@@ -91,6 +91,7 @@ set scrolloff=3
 set hlsearch
 set incsearch
 set ignorecase
+
 " Override ignorecase if the search string contains upper case characters.
 set smartcase
 
@@ -112,10 +113,14 @@ filetype plugin indent on
 " something that looks useful.
 set cmdheight=2
 set laststatus=2
+
 " With fugitive in place.
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set showmode
+
+" Fish fix
+set shell=/bin/bash
 
 " ===========
 " Visual Mode
@@ -181,6 +186,7 @@ set textwidth=80
 " Global Keymappings
 " ==================
 
+" Hit F3 to toggle paste mode
 set pastetoggle=<F3>
 
 " arrow keys move visible lines
@@ -362,6 +368,7 @@ endfunction ClangComplete
 " This to enables the somewhat-experimental clang-based
 " autocompletion support.
 autocmd FileType c setlocal omnifunc=ClangComplete
+let g:syntastic_c_compiler = 'clang'
 
 
 " HTML and templates
@@ -392,6 +399,7 @@ endfun
 autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 au BufNewFile,BufRead *.sls setf yaml
 
+
 " ====================
 " Plugin configuration
 " ====================
@@ -413,6 +421,9 @@ let g:closetag_html_style=1
 " Haskellmode
 let g:haddock_browser="/usr/bin/google-chrome"
 au BufEnter *.hs compiler ghc
+
+" Use current hsenv's ghc
+let g:ghc=system("/usr/bin/which ghc")
 
 " Pathogen initialization
 
@@ -450,9 +461,6 @@ let g:syntastic_disabled_filetypes = ['coffee']
 
 " Append my own bin/ to the vim internal $PATH
 let $PATH=$PATH . ":~/Applications/bin"
-
-" Fish fix
-set shell=/bin/bash
 
 " via: http://vim.wikia.com/wiki/HTML_entities
 function! HtmlEscape()
