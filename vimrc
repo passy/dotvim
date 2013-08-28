@@ -29,8 +29,8 @@ set history=3000
 " Allow 16 colors inside Gnome Terminal.
 set t_Co=16
 
-" Enable mouse everywhere.
-set mouse=a
+" Disable mouse.
+set mouse=
 
 " Hide mouse pointer while typing
 set mousehide
@@ -441,9 +441,15 @@ set t_Co=16
 " let g:solarized_termcolors=256
 colorscheme solarized
 
-" Powerline setup
-set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
-
+" Lightline setup
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 
 " Netrw hist
 let g:netrw_home = "/tmp"

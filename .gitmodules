@@ -136,3 +136,6 @@
 [submodule "bundle/css3-syntax"]
 	path = bundle/css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/lightline"]
+	path = bundle/lightline
+	url = https://github.com/itchyny/lightline.vim
