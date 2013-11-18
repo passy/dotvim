@@ -139,3 +139,15 @@
 [submodule "bundle/lightline"]
 	path = bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = https://github.com/juvenn/mustache.vim.git
+[submodule "bundle/scala"]
+	path = bundle/scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/gradle"]
+	path = bundle/gradle
+	url = https://github.com/tfnico/vim-gradle.git
+[submodule "bundle/groovy"]
+	path = bundle/groovy
+	url = https://github.com/mtrovo/groovy.vim.git
