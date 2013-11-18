@@ -1,5 +1,5 @@
-" Modern vim, plx.
-set nocompatible
+" " Modern vim, plx.
+" set nocompatible
 
 " Allow backspace whenever I want it.
 set backspace=indent,eol,start
@@ -27,7 +27,7 @@ set wildmode=list:full
 set history=3000
 
 " Allow 16 colors inside Gnome Terminal.
-set t_Co=16
+" set t_Co=16
 
 " Disable mouse.
 set mouse=
@@ -75,7 +75,7 @@ set ttyfast
 
 " Font and background
 if has("gui_running")
-    set guifont=Ubuntu\ Mono\ 12
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline
     set bg=light
 else
     set bg=dark
@@ -129,6 +129,8 @@ set shell=/bin/bash
 " In visual mode when you press * or # to search for the current selection
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
+" <C-r> let's you replace stuff
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
@@ -437,8 +439,12 @@ let g:SuperTabDefaultCompletionType = "context"
 set t_Co=16
 
 " Solarized (colorscheme)
+" let g:solarized_termcolors = 256
 
-" let g:solarized_termcolors=256
+set background=dark
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Lightline setup
@@ -488,8 +494,8 @@ map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 map <silent> <Leader>s :syntax sync fromstart<CR>
 
 " Better clipping
-vnoremap "+y :!xclip -f -sel clip<CR>
-noremap "+p :r!xclip -o -sel clip<CR>
+" vnoremap "+y :!xclip -f -sel clip<CR>
+" noremap "+p :r!xclip -o -sel clip<CR>
 
 " Fake '|' as text object
 nnoremap di\| T\|d,
@@ -532,3 +538,15 @@ function! FixTodoMVC()
   silent %s/){/) {/eg
   silent %s/,\[/, \[/eg
 endfunction
+
+" make external keypad work in terminal vim OSX!
+map! <Esc>Oq 1
+map! <Esc>Or 2
+map! <Esc>Os 3
+map! <Esc>Ot 4
+map! <Esc>Ou 5
+map! <Esc>Ov 6
+map! <Esc>Ow 7
+map! <Esc>Ox 8
+map! <Esc>Oy 9
+map! <Esc>Op 0
