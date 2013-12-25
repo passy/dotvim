@@ -148,9 +148,6 @@
 [submodule "bundle/gradle"]
 	path = bundle/gradle
 	url = https://github.com/tfnico/vim-gradle.git
-[submodule "bundle/groovy"]
-	path = bundle/groovy
-	url = https://github.com/mtrovo/groovy.vim.git
 [submodule "bundle/dart"]
 	path = bundle/dart
 	url = https://github.com/dart-lang/dart-vim-plugin.git
