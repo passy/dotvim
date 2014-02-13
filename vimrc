@@ -208,6 +208,9 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Hide search highlights
 nnoremap <leader>n :noh<CR>
 
+" Run Vimux Last Comand
+nnoremap <leader>v :VimuxRunLastCommand<CR>
+
 " ===============
 " Useful snippets
 " ===============
@@ -247,6 +250,9 @@ autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
 
 " A path to a clang executable.
 let g:clang_path = "clang++"
+
+" Use jsxhint instead of the pure jshint for XML madness
+let g:syntastic_jshint_exec = "jsxhint"
 
 " A list of options to add to the clang commandline, for example to add
 " include paths, predefined macros, and language options.
