@@ -160,3 +160,6 @@
 [submodule "bundle/bundle/vimux"]
 	path = bundle/bundle/vimux
 	url = git@github.com:benmills/vimux.git
+[submodule "bundle/dispatch"]
+	path = bundle/dispatch
+	url = git@github.com:tpope/vim-dispatch.git
