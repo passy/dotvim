@@ -426,10 +426,6 @@ autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:clo
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 let g:closetag_html_style=1
 
-" Haskellmode
-let g:haddock_browser="/usr/bin/google-chrome"
-au BufEnter *.hs compiler ghc
-
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
 
@@ -500,8 +496,8 @@ map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 map <silent> <Leader>s :syntax sync fromstart<CR>
 
 " Better clipping
-" vnoremap "+y :!xclip -f -sel clip<CR>
-" noremap "+p :r!xclip -o -sel clip<CR>
+vnoremap "+y :!xclip -f -sel clip<CR>
+noremap "+p :r!xclip -o -sel clip<CR>
 
 " Fake '|' as text object
 nnoremap di\| T\|d,

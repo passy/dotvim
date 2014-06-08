@@ -163,3 +163,9 @@
 [submodule "bundle/dispatch"]
 	path = bundle/dispatch
 	url = git@github.com:tpope/vim-dispatch.git
+[submodule "bundle/tmux-complete.vim"]
+	path = bundle/tmux-complete.vim
+	url = git://github.com/wellle/tmux-complete.vim.git
+[submodule "bundle/hdevtools"]
+	path = bundle/hdevtools
+	url = git@github.com:bitc/vim-hdevtools.git
