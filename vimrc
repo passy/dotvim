@@ -377,6 +377,7 @@ endfunction ClangComplete
 " autocompletion support.
 autocmd FileType c setlocal omnifunc=ClangComplete
 let g:syntastic_c_compiler = 'clang'
+let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
 
 
 " HTML and templates
@@ -495,9 +496,8 @@ map <silent> <Leader>hu :call HtmlUnEscape()<CR>
 " of a huge docstring in python.
 map <silent> <Leader>s :syntax sync fromstart<CR>
 
-" Better clipping
-vnoremap "+y :!xclip -f -sel clip<CR>
-noremap "+p :r!xclip -o -sel clip<CR>
+" Clipboarding that seems to work
+set clipboard=unnamed
 
 " Fake '|' as text object
 nnoremap di\| T\|d,
