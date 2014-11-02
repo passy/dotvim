@@ -1,11 +1,6 @@
-" " Modern vim, plx.
-" set nocompatible
-
-" Allow backspace whenever I want it.
-set backspace=indent,eol,start
-
 " Less clutter in the GUI.
 let no_buffers_menu=1
+
 " Toolbars are so yesterday.
 set guioptions-=T
 
@@ -19,15 +14,11 @@ set completeopt-=preview
 set gcr=a:blinkon0
 
 " Customize the wildmenu.
-set wildmenu
 set wildignore=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif
 set wildmode=list:full
 
 " We shall not forget.
 set history=3000
-
-" Allow 16 colors inside Gnome Terminal.
-" set t_Co=16
 
 " Disable mouse.
 set mouse=
@@ -35,9 +26,6 @@ set mouse=
 " Hide mouse pointer while typing
 set mousehide
 set mousemodel=popup
-
-" Show the ruler. All. The. Time.
-set ruler
 
 " Show line numbers.
 " set number
@@ -89,7 +77,6 @@ set scrolloff=3
 
 " Better search
 set hlsearch
-set incsearch
 set ignorecase
 
 " Override ignorecase if the search string contains upper case characters.
@@ -97,7 +84,6 @@ set smartcase
 
 " Highlight certain whitespaces
 set list
-set listchars=tab:>.,trail:…,extends:#,nbsp:.
 
 " Enable automatic title setting for terminals
 set title
@@ -112,15 +98,10 @@ filetype plugin indent on
 " Make the command line two lines heigh and change the statusline display to
 " something that looks useful.
 set cmdheight=2
-set laststatus=2
 
 " With fugitive in place.
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-set showcmd
 set showmode
-
-" Fish fix
-set shell=/bin/bash
 
 " ===========
 " Visual Mode
@@ -158,6 +139,9 @@ function! VisualSearch(direction) range
     let @" = l:saved_reg
 endfunction
 
+" Load plugins
+source ~/.vim/plug.vim
+
 " =========================
 " Default filetype settings
 " =========================
@@ -167,7 +151,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
 
 " But don't outdent hashes
 inoremap # X#
@@ -246,139 +229,17 @@ autocmd FileType go setlocal noexpandtab
 " Yaml
 autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
 
-" Clang code-completion support. This is somewhat experimental!
-
-" A path to a clang executable.
-let g:clang_path = "clang++"
-
 " Use jsxhint instead of the pure jshint for XML madness
 let g:syntastic_jshint_exec = "jsxhint"
-
-" A list of options to add to the clang commandline, for example to add
-" include paths, predefined macros, and language options.
-let g:clang_opts = [
-  \ "-x","c++",
-  \ "-D__STDC_LIMIT_MACROS=1","-D__STDC_CONSTANT_MACROS=1",
-  \ "-Iinclude" ]
-
-function! ClangComplete(findstart, base)
-   if a:findstart == 1
-      " In findstart mode, look for the beginning of the current identifier.
-      let l:line = getline('.')
-      let l:start = col('.') - 1
-      while l:start > 0 && l:line[l:start - 1] =~ '\i'
-         let l:start -= 1
-      endwhile
-      return l:start
-   endif
-
-   " Get the current line and column numbers.
-   let l:l = line('.')
-   let l:c = col('.')
-
-   " Build a clang commandline to do code completion on stdin.
-   let l:the_command = shellescape(g:clang_path) .
-                     \ " -cc1 -code-completion-at=-:" . l:l . ":" . l:c
-   for l:opt in g:clang_opts
-      let l:the_command .= " " . shellescape(l:opt)
-   endfor
-
-   " Copy the contents of the current buffer into a string for stdin.
-   " TODO: The extra space at the end is for working around clang's
-   " apparent inability to do code completion at the very end of the
-   " input.
-   " TODO: Is it better to feed clang the entire file instead of truncating
-   " it at the current line?
-   let l:process_input = join(getline(1, l:l), "\n") . " "
-
-   " Run it!
-   let l:input_lines = split(system(l:the_command, l:process_input), "\n")
-
-   " Parse the output.
-   for l:input_line in l:input_lines
-      " Vim's substring operator is annoyingly inconsistent with python's.
-      if l:input_line[:11] == 'COMPLETION: '
-         let l:value = l:input_line[12:]
-
-        " Chop off anything after " : ", if present, and move it to the menu.
-        let l:menu = ""
-        let l:spacecolonspace = stridx(l:value, " : ")
-        if l:spacecolonspace != -1
-           let l:menu = l:value[l:spacecolonspace+3:]
-           let l:value = l:value[:l:spacecolonspace-1]
-        endif
-
-        " Chop off " (Hidden)", if present, and move it to the menu.
-        let l:hidden = stridx(l:value, " (Hidden)")
-        if l:hidden != -1
-           let l:menu .= " (Hidden)"
-           let l:value = l:value[:l:hidden-1]
-        endif
-
-        " Handle "Pattern". TODO: Make clang less weird.
-        if l:value == "Pattern"
-           let l:value = l:menu
-           let l:pound = stridx(l:value, "#")
-           " Truncate the at the first [#, <#, or {#.
-           if l:pound != -1
-              let l:value = l:value[:l:pound-2]
-           endif
-        endif
-
-         " Filter out results which don't match the base string.
-         if a:base != ""
-            if l:value[:strlen(a:base)-1] != a:base
-               continue
-            end
-         endif
-
-        " TODO: Don't dump the raw input into info, though it's nice for now.
-        " TODO: The kind string?
-        let l:item = {
-          \ "word": l:value,
-          \ "menu": l:menu,
-          \ "info": l:input_line,
-          \ "dup": 1 }
-
-        " Report a result.
-        if complete_add(l:item) == 0
-           return []
-        endif
-        if complete_check()
-           return []
-        endif
-
-      elseif l:input_line[:9] == "OVERLOAD: "
-         " An overload candidate. Use a crazy hack to get vim to
-         " display the results. TODO: Make this better.
-         let l:value = l:input_line[10:]
-         let l:item = {
-           \ "word": " ",
-           \ "menu": l:value,
-           \ "info": l:input_line,
-           \ "dup": 1}
-
-        " Report a result.
-        if complete_add(l:item) == 0
-           return []
-        endif
-        if complete_check()
-           return []
-        endif
-
-      endif
-   endfor
-
-
-   return []
-endfunction ClangComplete
 
 " This to enables the somewhat-experimental clang-based
 " autocompletion support.
 autocmd FileType c setlocal omnifunc=ClangComplete
+
+" Haskell settings
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
-
+let g:haddoc_browser = 'google-chrome-stable'
 
 " HTML and templates
 fun! s:SelectHTML()
@@ -430,16 +291,9 @@ let g:closetag_html_style=1
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
 
-" Pathogen initialization
-
-call pathogen#infect()
-call pathogen#helptags()
-
 " SuperTab
 
 let g:SuperTabDefaultCompletionType = "context"
-
-set t_Co=16
 
 " Solarized (colorscheme)
 " let g:solarized_termcolors = 256
@@ -498,6 +352,12 @@ map <silent> <Leader>s :syntax sync fromstart<CR>
 
 " Clipboarding that seems to work
 set clipboard=unnamed
+
+" Elm keybindings
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>ep :ElmPrintTypes<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>
 
 " Fake '|' as text object
 nnoremap di\| T\|d,
