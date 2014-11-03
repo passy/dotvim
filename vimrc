@@ -6,6 +6,8 @@ set guioptions-=T
 
 " Highlight the current line
 set cursorline
+" But not the current column, I don't think I've got enough colors for that.
+set nocursorcolumn
 
 " Does anybody really like the autocomplete popup help?
 set completeopt-=preview
@@ -90,9 +92,6 @@ set title
 set titleold="Terminal"
 set titlestring=%F\ -\ Vim
 
-" Enable filetype extensions
-filetype plugin indent on
-
 " Statusbar and Linenumbers
 " -------------------------
 " Make the command line two lines heigh and change the statusline display to
@@ -139,9 +138,6 @@ function! VisualSearch(direction) range
     let @" = l:saved_reg
 endfunction
 
-" Load plugins
-source ~/.vim/plug.vim
-
 " =========================
 " Default filetype settings
 " =========================
@@ -166,6 +162,56 @@ set fileformats=unix,dos,mac
 
 " Controversial.
 set textwidth=80
+
+
+" ====================
+" Plugin configuration
+" ====================
+
+" Use jsxhint instead of the pure jshint for XML madness
+let g:syntastic_javascript_jshint_exec = "jsxhint"
+
+" Haskell settings
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
+let g:haddock_browser = 'google-chrome-stable'
+
+" Command-T/CTRL-P
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
+
+" Closetag
+
+let g:closetag_html_style=1
+
+" Use current hsenv's ghc
+let g:ghc=system("/usr/bin/which ghc")
+
+" SuperTab
+
+let g:SuperTabDefaultCompletionType = "context"
+
+set background=dark
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
+
+" Lightline setup
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+" Netrw hist
+let g:netrw_home = "/tmp"
+let g:netrw_list_hide = '.*\.py[co]$'
+
+
+" Load plugins
+source ~/.vim/plug.vim
 
 " ==================
 " Global Keymappings
@@ -229,17 +275,8 @@ autocmd FileType go setlocal noexpandtab
 " Yaml
 autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
 
-" Use jsxhint instead of the pure jshint for XML madness
-let g:syntastic_jshint_exec = "jsxhint"
-
-" This to enables the somewhat-experimental clang-based
-" autocompletion support.
-autocmd FileType c setlocal omnifunc=ClangComplete
-
-" Haskell settings
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
-let g:haddoc_browser = 'google-chrome-stable'
+" Closetag style for HTML-like
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
 
 " HTML and templates
 fun! s:SelectHTML()
@@ -270,63 +307,19 @@ autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 au BufNewFile,BufRead *.sls setf yaml
 
 
-" ====================
-" Plugin configuration
-" ====================
+" ToggleBG
+call togglebg#map("<F5>")
 
-" Command-T/CTRL-P
+" =============
+" Personal crap
+" =============
 
 noremap <leader>t <Esc>:CtrlP<CR>
 noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
 noremap <leader>m <Esc>:CtrlPBuffer<CR>
 noremap <leader>js %!python -m json.tool<CR>
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 
-" Closetag
-
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-let g:closetag_html_style=1
-
-" Use current hsenv's ghc
-let g:ghc=system("/usr/bin/which ghc")
-
-" SuperTab
-
-let g:SuperTabDefaultCompletionType = "context"
-
-" Solarized (colorscheme)
-" let g:solarized_termcolors = 256
-
-set background=dark
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-let g:solarized_termtrans = 1
 colorscheme solarized
-
-" Lightline setup
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
-" Netrw hist
-let g:netrw_home = "/tmp"
-let g:netrw_list_hide = '.*\.py[co]$'
-
-" ToggleBG
-call togglebg#map("<F5>")
-
-" Don't mess with vim-coffee-script
-let g:syntastic_disabled_filetypes = ['coffee']
-
-" =============
-" Personal crap
-" =============
 
 " Append my own bin/ to the vim internal $PATH
 let $PATH=$PATH . ":~/Applications/bin"
