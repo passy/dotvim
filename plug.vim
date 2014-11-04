@@ -7,6 +7,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-markdown'
 
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-textobj-user'
