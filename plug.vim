@@ -8,6 +8,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
 
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-textobj-user'
