@@ -22,6 +22,7 @@ Plug 'Shougo/vimproc'
 Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
+Plug 'Raimondi/delimitMate'
 
 " Language specific stuff
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
