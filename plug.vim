@@ -28,6 +28,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hdevtools', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 
