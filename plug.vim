@@ -24,6 +24,9 @@ Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
 Plug 'Raimondi/delimitMate'
 
+" Can't language-detect this, because it contains the ftdetect rules
+Plug 'raichoo/purescript-vim'
+
 " Language specific stuff
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hdevtools', { 'for': 'haskell' }
@@ -31,5 +34,6 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
 call plug#end()
