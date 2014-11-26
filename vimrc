@@ -295,9 +295,6 @@ noremap <leader>js %!python -m json.tool<CR>
 
 colorscheme solarized
 
-" Append my own bin/ to the vim internal $PATH
-let $PATH=$PATH . ":~/Applications/bin"
-
 " via: http://vim.wikia.com/wiki/HTML_entities
 function! HtmlEscape()
   silent s/&/\&amp;/eg
@@ -313,12 +310,10 @@ endfunction
 
 map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnEscape()<CR>
+
 " Fix broken syntax highlighting on demand, e.g. when in the middle
 " of a huge docstring in python.
 map <silent> <Leader>s :syntax sync fromstart<CR>
-
-" Clipboarding that seems to work
-set clipboard=unnamed
 
 " Elm keybindings
 nnoremap <leader>el :ElmEvalLine<CR>
