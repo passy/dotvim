@@ -266,12 +266,6 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 " Sass
 autocmd FileType sass setlocal shiftwidth=4 textwidth=0 softtabstop=4
 
-" CoffeeScript
-" autocmd BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
-let coffee_lint_options = '/home/pascal/Dropbox/dotfiles/coffeelint.json'
-let coffee_linter = '/home/pascal/.npm/bin/coffeelint'
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
 " Go
 autocmd FileType go setlocal noexpandtab
 
