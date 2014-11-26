@@ -278,38 +278,6 @@ autocmd FileType go setlocal noexpandtab
 " Yaml
 autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
 
-" Closetag style for HTML-like
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako,jinja,jinja.html let b:closetag_html_style=1
-
-" HTML and templates
-fun! s:SelectHTML()
-let n = 1
-while n < 50 && n < line("$")
-  " check for jinja
-  if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
-    set ft=jinja.html
-    return
-  endif
-  " check for mako
-    if getline(n) =~ '<%\(def\|inherit\)'
-      set ft=mako
-      return
-    endif
-    " check for genshi
-    if getline(n) =~ 'xmlns:py\|py:\(match\|for\|if\|def\|strip\|xmlns\)'
-      set ft=genshi
-      return
-    endif
-    let n = n + 1
-  endwhile
-  " go with html
-  set ft=html
-endfun
-
-autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
-au BufNewFile,BufRead *.sls setf yaml
-
-
 " ToggleBG
 call togglebg#map("<F5>")
 
