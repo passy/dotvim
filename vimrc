@@ -209,6 +209,9 @@ let g:lightline = {
 let g:netrw_home = "/tmp"
 let g:netrw_list_hide = '.*\.py[co]$'
 
+" Set our own list characters before sensible mows them over.
+set listchars=tab:»\ ,trail:·,extends:»,precedes:«,nbsp:+
+
 
 " Load plugins
 source ~/.vim/plug.vim
