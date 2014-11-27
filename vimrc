@@ -30,7 +30,6 @@ set mousehide
 set mousemodel=popup
 
 " Show line numbers.
-" set number
 set relativenumber
 
 " Code folding is neat.
@@ -60,7 +59,7 @@ set undoreload=10000
 " Syntax highlighting? Yes please!
 syntax on
 
-" We're always on a fast connection to our vim.
+" We're always on a fast connection to our vim. Is this needed in neovim?
 set ttyfast
 
 " Font and background
@@ -86,6 +85,9 @@ set smartcase
 
 " Highlight certain whitespaces
 set list
+
+" Set our own list characters before sensible mows them over.
+set listchars=tab:»\ ,trail:·,extends:»,precedes:«,nbsp:+
 
 " Enable automatic title setting for terminals
 set title
@@ -163,7 +165,6 @@ set fileformats=unix,dos,mac
 " Controversial.
 set textwidth=80
 
-
 " ====================
 " Plugin configuration
 " ====================
@@ -171,28 +172,20 @@ set textwidth=80
 " Use jsxhint instead of the pure jshint for XML madness
 let g:syntastic_javascript_jshint_exec = "jsxhint"
 
-" Haskell settings
-let g:syntastic_c_compiler = 'clang'
+" Probably a terrible idea but works for me.
 let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
 let g:haddock_browser = 'google-chrome-stable'
 
 " Command-T/CTRL-P
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 
-" Closetag
-
+" XHTML is dead.
 let g:closetag_html_style=1
 
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
 
-" SuperTab
-
-let g:SuperTabDefaultCompletionType = "context"
-
 set background=dark
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
 let g:solarized_termtrans = 1
 
 " Lightline setup
@@ -208,10 +201,6 @@ let g:lightline = {
 " Netrw hist
 let g:netrw_home = "/tmp"
 let g:netrw_list_hide = '.*\.py[co]$'
-
-" Set our own list characters before sensible mows them over.
-set listchars=tab:»\ ,trail:·,extends:»,precedes:«,nbsp:+
-
 
 " Load plugins
 source ~/.vim/plug.vim
@@ -285,6 +274,7 @@ call togglebg#map("<F5>")
 noremap <leader>t <Esc>:CtrlP<CR>
 noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
 noremap <leader>m <Esc>:CtrlPBuffer<CR>
+" Format JSON
 noremap <leader>js %!python -m json.tool<CR>
 
 colorscheme solarized
@@ -341,9 +331,7 @@ nnoremap K k
 " pylint is crazy pants. Let's stick to flake8.
 let g:syntastic_python_checkers=['flake8']
 
-" no automatic template insertion
-let g:templates_no_autocmd = 1
-
+" Fix the most common TodoMVC style issues.
 function! FixTodoMVC()
   set ts=4
   set sw=4
