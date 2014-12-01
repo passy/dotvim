@@ -27,6 +27,7 @@ Plug 'Raimondi/delimitMate'
 " Can't language-detect this, because it contains the ftdetect rules
 Plug 'raichoo/purescript-vim'
 Plug 'lambdatoast/elm.vim'
+Plug 'tfnico/vim-gradle'
 
 " Language specific stuff
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
