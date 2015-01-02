@@ -37,5 +37,6 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 Plug 'facebook/vim-flow', { 'for': 'javascript' }
+Plug 'ferreum/vim-fish', { 'for': 'fish' }
 
 call plug#end()
