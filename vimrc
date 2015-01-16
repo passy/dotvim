@@ -171,6 +171,7 @@ set textwidth=80
 
 " Use jsxhint instead of the pure jshint for XML madness
 let g:syntastic_javascript_jshint_exec = "jsxhint"
+let g:syntastic_javascript_checkers = ["jshint"]
 
 " Probably a terrible idea but works for me.
 let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'

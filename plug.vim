@@ -24,6 +24,9 @@ Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
 Plug 'Raimondi/delimitMate'
 
+" Neovim-specific
+Plug 'benekastah/neomake'
+
 " Can't language-detect this, because it contains the ftdetect rules
 Plug 'raichoo/purescript-vim'
 Plug 'lambdatoast/elm.vim'
