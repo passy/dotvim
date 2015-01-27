@@ -174,7 +174,7 @@ let g:syntastic_javascript_jshint_exec = "jsxhint"
 let g:syntastic_javascript_checkers = ["jshint"]
 
 " Probably a terrible idea but works for me.
-let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-linux-ghc-7.8.3-packages.conf.d/"'
+let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-osx-ghc-7.10.0.20141222-packages.conf.d/"'
 let g:haddock_browser = 'google-chrome-stable'
 
 " Command-T/CTRL-P
