@@ -41,5 +41,7 @@ Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'wting/rust.vim', { 'for': 'rust' }
 
 call plug#end()
