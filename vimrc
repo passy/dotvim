@@ -177,11 +177,23 @@ let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-osx-ghc-7.10.0.20141222-packages.conf.d/"'
 let g:haddock_browser = 'google-chrome-stable'
 
-" Command-T/CTRL-P
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
-
 " XHTML is dead.
 let g:closetag_html_style=1
+
+" Unite
+let g:unite_source_history_yank_enable = 1
+
+try
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+
+" search a file in the filetree
+nnoremap <leader>t :<C-u>Unite -start-insert file_rec/async<cr>
+
+" search through the yank buffer
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
@@ -272,9 +284,6 @@ call togglebg#map("<F5>")
 " Personal crap
 " =============
 
-noremap <leader>t <Esc>:CtrlP<CR>
-noremap <leader>T <Esc>:CtrlPClearAllCaches<CR>
-noremap <leader>m <Esc>:CtrlPBuffer<CR>
 " Format JSON
 noremap <leader>js %!python -m json.tool<CR>
 
