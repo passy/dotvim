@@ -33,12 +33,14 @@ Plug 'lambdatoast/elm.vim'
 Plug 'tfnico/vim-gradle'
 
 " Language specific stuff
-Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+Plug 'yogsototh/haskell-vim', { 'for': 'haskell' }
+Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
 Plug 'dan-t/vim-hdevtools', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
+
 Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }

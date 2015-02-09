@@ -173,9 +173,26 @@ set textwidth=80
 let g:syntastic_javascript_jshint_exec = "jsxhint"
 let g:syntastic_javascript_checkers = ["jshint"]
 
-" Probably a terrible idea but works for me.
-let g:syntastic_haskell_hdevtools_args = '-g "-package-db .cabal-sandbox/x86_64-osx-ghc-7.10.0.20141222-packages.conf.d/"'
-let g:haddock_browser = 'google-chrome-stable'
+let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
+let g:syntastic_always_populate_loc_list = 1
+
+" Haskell
+nmap <silent> <leader>ht :GhcModType<CR>
+nmap <silent> <leader>hh :GhcModTypeClear<CR>
+nmap <silent> <leader>hT :GhcModTypeInsert<CR>
+nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
+
+" Auto-checking on writing
+autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
+
+"  neocomplcache (advanced completion)
+autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
+function! SetToCabalBuild()
+    if glob("*.cabal") != ''
+        set makeprg=cabal\ build
+    endif
+endfunction
+autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
 
 " XHTML is dead.
 let g:closetag_html_style=1
