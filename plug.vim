@@ -42,6 +42,6 @@ Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'wting/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 call plug#end()
