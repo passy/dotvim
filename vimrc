@@ -193,7 +193,9 @@ function! SetToCabalBuild()
         set makeprg=cabal\ build
     endif
 endfunction
+
 autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
+autocmd BufEnter *.hs,*.lhs :setlocal omnifunc=necoghc#omnifunc
 
 " XHTML is dead.
 let g:closetag_html_style=1
