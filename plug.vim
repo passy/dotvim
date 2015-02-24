@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'mbbill/undotree'
 
 " Neovim-specific
 Plug 'benekastah/neomake'
@@ -41,7 +42,6 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
 Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 
-Plug 'facebook/vim-flow', { 'for': 'javascript' }
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
