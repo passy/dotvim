@@ -183,6 +183,16 @@ nmap <silent> <leader>hh :GhcModTypeClear<CR>
 nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
 
+function! FindCabalSandboxRoot()
+    return '/app/sandbox/'
+endfunction
+
+function! FindCabalSandboxRootPackageConf()
+    return glob(FindCabalSandboxRoot().'/*-packages.conf.d')
+endfunction
+
+let g:hdevtools_options = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
+
 " Auto-checking on writing
 autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
 
