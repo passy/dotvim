@@ -24,6 +24,7 @@ Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree'
+Plug 'godlygeek/tabular'
 
 " Neovim-specific
 Plug 'benekastah/neomake'
