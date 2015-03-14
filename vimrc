@@ -179,6 +179,7 @@ let g:syntastic_always_populate_loc_list = 1
 " Haskell
 nmap <silent> <leader>ht :HdevtoolsType<CR>
 nmap <silent> <leader>hi :HdevtoolsInfo<CR>
+nmap <silent> <leader>hs :HsimportSymbol<CR>
 nmap <silent> <leader>hh :GhcModTypeClear<CR>
 nmap <silent> <leader>hT :GhcModTypeInsert<CR>
 nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
