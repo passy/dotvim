@@ -46,5 +46,6 @@ Plug 'dan-t/vim-hsimport', { 'for': 'haskell' }
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
