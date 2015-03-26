@@ -192,7 +192,7 @@ function! FindCabalSandboxRootPackageConf()
     return glob(FindCabalSandboxRoot().'/*-packages.conf.d')
 endfunction
 
-let g:hdevtools_options = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
+let g:syntastic_hdevtools_options = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
 
 " Auto-checking on writing
 autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
@@ -248,6 +248,10 @@ let g:netrw_list_hide = '.*\.py[co]$'
 
 " Load plugins
 source ~/.vim/plug.vim
+
+" This messes up stuff badly if not set in my terminal emu
+" Sensible comes with an foolish default of 100, tho
+set ttimeoutlen=-1
 
 " ==================
 " Global Keymappings
