@@ -6,6 +6,7 @@ set guioptions-=T
 
 " Highlight the current line
 set cursorline
+
 " But not the current column, I don't think I've got enough colors for that.
 set nocursorcolumn
 
