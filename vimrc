@@ -225,6 +225,9 @@ endtry
 " search a file in the filetree
 nnoremap <leader>t :<C-u>Unite -start-insert file_rec/async<cr>
 
+" search in all buffers
+nnoremap <leader>m :<C-u>Unite -start-insert buffer<cr>
+
 " search through the yank buffer
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
