@@ -1,6 +1,9 @@
 " Less clutter in the GUI.
 let no_buffers_menu=1
 
+" This is an experiment.
+let mapleader = "\<Space>"
+
 " Toolbars are so yesterday.
 set guioptions-=T
 
