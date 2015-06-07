@@ -265,6 +265,9 @@ set ttimeoutlen=-1
 " Global Keymappings
 " ==================
 
+" Probably vim's biggest mistake
+nmap Y y$
+
 " Hit F3 to toggle paste mode
 set pastetoggle=<F3>
 
