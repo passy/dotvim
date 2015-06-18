@@ -180,37 +180,6 @@ let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
 let g:syntastic_always_populate_loc_list = 1
 
-" Haskell
-nmap <silent> <leader>ht :HdevtoolsType<CR>
-nmap <silent> <leader>hi :HdevtoolsInfo<CR>
-nmap <silent> <leader>hs :HsimportSymbol<CR>
-nmap <silent> <leader>hh :GhcModTypeClear<CR>
-nmap <silent> <leader>hT :GhcModTypeInsert<CR>
-nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
-
-function! FindCabalSandboxRoot()
-    return '/app/sandbox/'
-endfunction
-
-function! FindCabalSandboxRootPackageConf()
-    return glob(FindCabalSandboxRoot().'/*-packages.conf.d')
-endfunction
-
-let g:syntastic_hdevtools_options = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
-
-" Auto-checking on writing
-autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
-
-"  neocomplcache (advanced completion)
-autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
-function! SetToCabalBuild()
-    if glob("*.cabal") != ''
-        set makeprg=cabal\ build
-    endif
-endfunction
-
-autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
-autocmd BufEnter *.hs,*.lhs :setlocal omnifunc=necoghc#omnifunc
 
 " XHTML is dead.
 let g:closetag_html_style=1
