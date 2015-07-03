@@ -177,6 +177,8 @@ set textwidth=80
 let g:syntastic_javascript_jshint_exec = "jsxhint"
 let g:syntastic_javascript_checkers = ["jshint"]
 
+let g:syntastic_haskell_checkers = ["hlint"]
+
 let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
 let g:syntastic_always_populate_loc_list = 1
 
