@@ -39,6 +39,7 @@ Plug 'yogsototh/haskell-vim', { 'for': 'haskell' }
 Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }

@@ -177,11 +177,10 @@ set textwidth=80
 let g:syntastic_javascript_jshint_exec = "jsxhint"
 let g:syntastic_javascript_checkers = ["jshint"]
 
-let g:syntastic_haskell_checkers = ["hlint"]
+let g:syntastic_haskell_checkers = ["hlint", "hdevtools"]
 
 let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
 let g:syntastic_always_populate_loc_list = 1
-
 
 " XHTML is dead.
 let g:closetag_html_style=1
@@ -204,6 +203,20 @@ nnoremap <leader>m :<C-u>Unite -start-insert buffer<cr>
 
 " search through the yank buffer
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
+
+" Run syntastic check manually
+nnoremap <leader>c :SyntasticCheck<CR>
+
+" Toggle between active and passive check mode
+nnoremap <leader>C :SyntasticToggleMode<CR>
+
+" toggle syntastic(?) error display
+map <silent> <Leader>e :Errors<CR>
+
+" show haskell type under the cursor
+au FileType haskell nnoremap <buffer> <F2> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F4> :HdevtoolsInfo<CR>
 
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
