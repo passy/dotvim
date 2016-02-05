@@ -41,9 +41,6 @@ set foldmethod=indent
 set foldlevel=99
 set foldenable
 
-" Remember vim state
-set viminfo=!,'100,\"100,:20,<50,s10,h,n~/.viminfo
-
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
@@ -63,9 +60,6 @@ set undoreload=10000
 " Syntax highlighting? Yes please!
 syntax on
 
-" We're always on a fast connection to our vim. Is this needed in neovim?
-set ttyfast
-
 " Font and background
 if has("gui_running")
   set guifont=Ubuntu\ Mono\ derivative\ Powerline
@@ -81,7 +75,6 @@ set colorcolumn=+0
 set scrolloff=3
 
 " Better search
-set hlsearch
 set ignorecase
 
 " Override ignorecase if the search string contains upper case characters.
