@@ -17,13 +17,11 @@ Plug 'scrooloose/syntastic'
 Plug 'benmills/vimux'
 Plug 'chreekat/vim-paren-crosshairs'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Shougo/vimproc'
-Plug 'Shougo/unite.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/powerline'
 Plug 'itchyny/lightline.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'mbbill/undotree'
 Plug 'godlygeek/tabular'
 
 " Neovim-specific
@@ -36,10 +34,10 @@ Plug 'tfnico/vim-gradle'
 
 " Language specific stuff
 Plug 'yogsototh/haskell-vim', { 'for': 'haskell' }
-Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'Shougo/neocomplcache.vim', { 'for': 'haskell' }
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+Plug 'Shougo/neocomplete.vim', { 'for': 'haskell' }
 
 Plug 'ferreum/vim-fish', { 'for': 'fish' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }

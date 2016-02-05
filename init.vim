@@ -1,9 +1,6 @@
 " Less clutter in the GUI.
 let no_buffers_menu=1
 
-" This is an experiment.
-let mapleader = "\<Space>"
-
 " Toolbars are so yesterday.
 set guioptions-=T
 
@@ -99,6 +96,9 @@ set cmdheight=2
 
 " With fugitive in place.
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set showmode
 
 " ===========
@@ -153,9 +153,6 @@ inoremap # X#
 " Multiples of shiftwidth, always!
 set shiftround
 
-" No exceptions, it's > y2k
-set encoding=utf-8
-
 " Prefer unix line ends
 set fileformats=unix,dos,mac
 
@@ -166,6 +163,17 @@ set textwidth=80
 " Plugin configuration
 " ====================
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+" ctrl-p
+map <silent> <Leader>t :CtrlP()<CR>
+noremap <leader>b<space> :CtrlPBuffer<cr>
+let g:ctrlp_custom_ignore = '\v[\/]dist$'
+
 " Use jsxhint instead of the pure jshint for XML madness
 let g:syntastic_javascript_jshint_exec = "jsxhint"
 let g:syntastic_javascript_checkers = ["jshint"]
@@ -175,27 +183,9 @@ let g:syntastic_haskell_checkers = ["hlint", "hdevtools"]
 let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
 let g:syntastic_always_populate_loc_list = 1
 
+
 " XHTML is dead.
 let g:closetag_html_style=1
-
-" Unite
-let g:unite_source_history_yank_enable = 1
-
-try
-  let g:unite_source_rec_async_command =
-     \ 'ag --follow --nocolor --nogroup --hidden -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-catch
-endtry
-
-" search a file in the filetree
-nnoremap <leader>t :<C-u>Unite -start-insert file_rec/async<cr>
-
-" search in all buffers
-nnoremap <leader>m :<C-u>Unite -start-insert buffer<cr>
-
-" search through the yank buffer
-nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 " Run syntastic check manually
 nnoremap <leader>c :SyntasticCheck<CR>
