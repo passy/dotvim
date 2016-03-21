@@ -226,7 +226,7 @@ source ~/.vim/plug.vim
 
 " This messes up stuff badly if not set in my terminal emu
 " Sensible comes with an foolish default of 100, tho
-set ttimeoutlen=-1
+set timeoutlen=1000 ttimeoutlen=0
 
 " ==================
 " Global Keymappings
