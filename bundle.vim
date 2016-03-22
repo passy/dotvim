@@ -1,10 +1,10 @@
 "dein Scripts-----------------------------
 
 " Required:
-set runtimepath^=bundle/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('bundle'))
+call dein#begin(expand('~/.vim/bundle'))
 
 " Let dein manage dein
 " Required:
