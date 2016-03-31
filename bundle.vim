@@ -32,6 +32,7 @@ call dein#add('godlygeek/tabular')
 
 " Neovim-specific
 call dein#add('benekastah/neomake')
+call dein#add('Shougo/deoplete.nvim')
 
 " Can't language-detect this, because it contains the ftdetect rules
 call dein#add('raichoo/purescript-vim')
@@ -54,7 +55,6 @@ call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
 call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell' })
 call dein#add('eagletmt/ghcmod-vim', { 'on_ft': 'haskell' })
 call dein#add('Shougo/neocomplcache.vim', { 'on_ft': 'haskell' })
-call dein#add('Shougo/neocomplete.vim', { 'on_ft': 'haskell' })
 
 call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
 call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })

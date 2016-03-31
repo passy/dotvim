@@ -169,6 +169,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
 " ctrl-p
 map <silent> <Leader>t :CtrlP()<CR>
 noremap <leader>b<space> :CtrlPBuffer<cr>
@@ -350,20 +353,3 @@ nnoremap va/ F/v,
 
 " Fuck K!
 nnoremap K k
-
-" pylint is crazy pants. Let's stick to flake8.
-let g:syntastic_python_checkers=['flake8']
-
-" Fix the most common TodoMVC style issues.
-function! FixTodoMVC()
-  set ts=4
-  set sw=4
-  set noexpandtab
-  silent %s/function(/function (/eg
-  silent %s/( /(/eg
-  silent %s/ )/)/eg
-  silent %s/ ]/]/eg
-  silent %s/\[ /\[/eg
-  silent %s/){/) {/eg
-  silent %s/,\[/, \[/eg
-endfunction
