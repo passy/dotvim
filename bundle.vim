@@ -40,15 +40,7 @@ call dein#add('lambdatoast/elm.vim')
 call dein#add('tfnico/vim-gradle')
 
 " Dep for async stuff done by other plugins.
-call dein#add('Shougo/vimproc.vim', {
-\ 'build': {
-\     'windows': 'tools\\update-dll-mingw',
-\     'cygwin': 'make -f make_cygwin.mak',
-\     'mac': 'make -f make_mac.mak',
-\     'linux': 'make',
-\     'unix': 'gmake',
-\    },
-\ })
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 " Language specific stuff
 call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
