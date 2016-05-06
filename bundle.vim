@@ -6,8 +6,6 @@ set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 " Required:
 call dein#begin(expand('~/.vim/bundle'))
 
-" Let dein manage dein
-" Required:
 call dein#add('tpope/vim-commentary')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-repeat')

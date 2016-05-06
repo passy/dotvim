@@ -36,6 +36,9 @@ set mousemodel=popup
 " Show line numbers.
 set relativenumber
 
+" But also show the current one.
+set number
+
 " Code folding is neat.
 set foldmethod=indent
 set foldlevel=99
