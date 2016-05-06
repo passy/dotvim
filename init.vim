@@ -1,6 +1,9 @@
 " Less clutter in the GUI.
 let no_buffers_menu=1
 
+" Some plugins won't work with Fish.
+set shell=/bin/bash
+
 " Toolbars are so yesterday.
 set guioptions-=T
 
