@@ -210,6 +210,10 @@ au FileType haskell nnoremap <buffer> <F2> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F4> :HdevtoolsInfo<CR>
 
+" Set Python syntax highlighting for BUCK files
+au BufNewFile,BufRead BUCK set filetype=python
+au BufNewFile,BufRead *_DEFS set filetype=python
+
 " Use current hsenv's ghc
 let g:ghc=system("/usr/bin/which ghc")
 
