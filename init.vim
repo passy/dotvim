@@ -235,7 +235,7 @@ let g:netrw_home = "/tmp"
 let g:netrw_list_hide = '.*\.py[co]$'
 
 " Load plugins
-source ~/.vim/bundle.vim
+source ~/.config/nvim/bundle.vim
 
 " This messes up stuff badly if not set in my terminal emu
 " Sensible comes with an foolish default of 100, tho
