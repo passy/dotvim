@@ -27,6 +27,10 @@ call dein#add('Lokaltog/powerline')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Raimondi/delimitMate')
 call dein#add('godlygeek/tabular')
+" Handy shortcuts and text motions for dealing with merge conflicts.
+call dein#add('vim-scripts/ConflictMotions')
+" Implicit dependency of the previous.
+call dein#add('vim-scripts/CountJump')
 
 " Neovim-specific
 call dein#add('benekastah/neomake')
