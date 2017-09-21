@@ -32,9 +32,13 @@ call dein#add('vim-scripts/ConflictMotions')
 " Implicit dependency of the previous.
 call dein#add('vim-scripts/CountJump')
 
+" Tmux integrations
+call dein#add('wellle/tmux-complete.vim')
+call dein#add('christoomey/vim-tmux-navigator')
+
 " Neovim-specific
 call dein#add('benekastah/neomake')
-call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/neocomplete.vim')
 
 " Can't language-detect this, because it contains the ftdetect rules
 call dein#add('raichoo/purescript-vim')
@@ -47,8 +51,9 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 " Language specific stuff
 call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
 call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell' })
-call dein#add('eagletmt/ghcmod-vim', { 'on_ft': 'haskell' })
+call dein#add('parsonsmatt/intero-neovim', { 'on_ft': 'haskell' })
 call dein#add('Shougo/neocomplcache.vim', { 'on_ft': 'haskell' })
+call dein#add('flowtype/vim-flow', { 'on_ft': 'javascript' })
 
 call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
 call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
