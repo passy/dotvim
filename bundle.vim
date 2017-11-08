@@ -17,7 +17,6 @@ call dein#add('tpope/vim-surround')
 call dein#add('kana/vim-smartinput')
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-indent')
-call dein#add('scrooloose/syntastic')
 call dein#add('benmills/vimux')
 call dein#add('chreekat/vim-paren-crosshairs')
 call dein#add('altercation/vim-colors-solarized')
@@ -37,8 +36,8 @@ call dein#add('wellle/tmux-complete.vim')
 call dein#add('christoomey/vim-tmux-navigator')
 
 " Neovim-specific
-call dein#add('benekastah/neomake')
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('w0rp/ale.git')
 
 " Can't language-detect this, because it contains the ftdetect rules
 call dein#add('raichoo/purescript-vim')
