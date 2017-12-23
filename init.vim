@@ -313,6 +313,11 @@ call togglebg#map("<F5>")
 " Format JSON
 noremap <leader>js %!python -m json.tool<CR>
 
+" Sane line joining where available
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
 colorscheme solarized
 
 " via: http://vim.wikia.com/wiki/HTML_entities
