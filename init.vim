@@ -179,8 +179,6 @@ let g:syntastic_check_on_wq = 0
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }
 
 " Deoplete
