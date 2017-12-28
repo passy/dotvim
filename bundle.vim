@@ -26,10 +26,14 @@ call dein#add('Lokaltog/powerline')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Raimondi/delimitMate')
 call dein#add('godlygeek/tabular')
+" Only for the smart paste option, really
+call dein#add('wincent/terminus')
 " Handy shortcuts and text motions for dealing with merge conflicts.
 call dein#add('vim-scripts/ConflictMotions')
 " Implicit dependency of the previous.
 call dein#add('vim-scripts/CountJump')
+" Jump, jump, jump, jump around!
+call dein#add('easymotion/vim-easymotion')
 
 " Tmux integrations
 call dein#add('wellle/tmux-complete.vim')
@@ -50,6 +54,8 @@ call dein#add('tfnico/vim-gradle')
 
 " Dep for async stuff done by other plugins.
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+" Language server
+call dein#add('autozimu/LanguageClient-neovim')
 
 " Language specific stuff
 call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
