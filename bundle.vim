@@ -37,7 +37,6 @@ call dein#add('christoomey/vim-tmux-navigator')
 
 " Neovim-specific
 call dein#add('w0rp/ale.git')
-call dein#add('benekastah/neomake')
 call dein#add('roxma/nvim-completion-manager')
 call dein#add('mhartington/nvim-typescript')
 
