@@ -36,8 +36,13 @@ call dein#add('wellle/tmux-complete.vim')
 call dein#add('christoomey/vim-tmux-navigator')
 
 " Neovim-specific
-call dein#add('Shougo/neocomplete.vim')
 call dein#add('w0rp/ale.git')
+call dein#add('benekastah/neomake')
+call dein#add('roxma/nvim-completion-manager')
+call dein#add('mhartington/nvim-typescript')
+
+" Typescript highlighting
+call dein#add('HerringtonDarkholme/yats.vim')
 
 " Can't language-detect this, because it contains the ftdetect rules
 call dein#add('raichoo/purescript-vim')
