@@ -162,9 +162,6 @@ set shiftround
 " Prefer unix line ends
 set fileformats=unix,dos,mac
 
-" Controversial.
-set textwidth=80
-
 " ====================
 " Plugin configuration
 " ====================
