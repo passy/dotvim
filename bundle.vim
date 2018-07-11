@@ -20,7 +20,6 @@ call dein#add('kana/vim-textobj-indent')
 call dein#add('benmills/vimux')
 call dein#add('chreekat/vim-paren-crosshairs')
 call dein#add('altercation/vim-colors-solarized')
-call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('Lokaltog/powerline')
 call dein#add('itchyny/lightline.vim')
@@ -68,6 +67,9 @@ call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
 call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
 call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
 call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
+
+call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+call dein#add('junegunn/fzf.vim')
 
 " Required:
 call dein#end()
