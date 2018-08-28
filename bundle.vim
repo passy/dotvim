@@ -1,82 +1,74 @@
 "dein Scripts-----------------------------
 
-" Required:
 set runtimepath^=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin(expand('~/.vim/bundle'))
+if dein#load_state('~/.config/nvim/bundle')
+  call dein#begin('~/.config/nvim/bundle')
+    call dein#add('~/.config/nvim/bundle')
+    call dein#add('tpope/vim-commentary')
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('tpope/vim-repeat')
+    call dein#add('tpope/vim-sleuth')
+    call dein#add('tpope/vim-unimpaired')
+    call dein#add('tpope/vim-markdown')
+    call dein#add('tpope/vim-surround')
 
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-repeat')
-call dein#add('tpope/vim-sleuth')
-call dein#add('tpope/vim-unimpaired')
-call dein#add('tpope/vim-markdown')
-call dein#add('tpope/vim-surround')
+    call dein#add('kana/vim-smartinput')
+    call dein#add('kana/vim-textobj-user')
+    call dein#add('kana/vim-textobj-indent')
+    call dein#add('benmills/vimux')
+    call dein#add('chreekat/vim-paren-crosshairs')
+    call dein#add('altercation/vim-colors-solarized')
+    call dein#add('airblade/vim-gitgutter')
+    call dein#add('Lokaltog/powerline')
+    call dein#add('itchyny/lightline.vim')
+    call dein#add('Raimondi/delimitMate')
+    call dein#add('godlygeek/tabular')
+    " Only for the smart paste option, really
+    call dein#add('wincent/terminus')
+    " Handy shortcuts and text motions for dealing with merge conflicts.
+    call dein#add('vim-scripts/ConflictMotions')
+    " Implicit dependency of the previous.
+    call dein#add('vim-scripts/CountJump')
+    " Jump, jump, jump, jump around!
+    call dein#add('easymotion/vim-easymotion')
 
-call dein#add('kana/vim-smartinput')
-call dein#add('kana/vim-textobj-user')
-call dein#add('kana/vim-textobj-indent')
-call dein#add('benmills/vimux')
-call dein#add('chreekat/vim-paren-crosshairs')
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('Lokaltog/powerline')
-call dein#add('itchyny/lightline.vim')
-call dein#add('Raimondi/delimitMate')
-call dein#add('godlygeek/tabular')
-" Only for the smart paste option, really
-call dein#add('wincent/terminus')
-" Handy shortcuts and text motions for dealing with merge conflicts.
-call dein#add('vim-scripts/ConflictMotions')
-" Implicit dependency of the previous.
-call dein#add('vim-scripts/CountJump')
-" Jump, jump, jump, jump around!
-call dein#add('easymotion/vim-easymotion')
+    " Tmux integrations
+    call dein#add('wellle/tmux-complete.vim')
+    call dein#add('christoomey/vim-tmux-navigator')
 
-" Tmux integrations
-call dein#add('wellle/tmux-complete.vim')
-call dein#add('christoomey/vim-tmux-navigator')
+    " Neovim-specific
+    call dein#add('w0rp/ale.git')
+    call dein#add('ncm2/ncm2')
+    " call dein#add('mhartington/nvim-typescript')
 
-" Neovim-specific
-call dein#add('w0rp/ale.git')
-call dein#add('roxma/nvim-completion-manager')
-" call dein#add('mhartington/nvim-typescript')
+    " Typescript highlighting
+    call dein#add('HerringtonDarkholme/yats.vim')
 
-" Typescript highlighting
-call dein#add('HerringtonDarkholme/yats.vim')
+    " Can't language-detect this, because it contains the ftdetect rules
+    call dein#add('raichoo/purescript-vim')
+    call dein#add('lambdatoast/elm.vim')
+    call dein#add('tfnico/vim-gradle')
 
-" Can't language-detect this, because it contains the ftdetect rules
-call dein#add('raichoo/purescript-vim')
-call dein#add('lambdatoast/elm.vim')
-call dein#add('tfnico/vim-gradle')
+    " Dep for async stuff done by other plugins.
+    call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+    " Language server
+    " call dein#add('autozimu/LanguageClient-neovim')
 
-" Dep for async stuff done by other plugins.
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-" Language server
-call dein#add('autozimu/LanguageClient-neovim')
+    " Language specific stuff
+    call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
+    call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell' })
+    call dein#add('parsonsmatt/intero-neovim', { 'on_ft': 'haskell' })
+    call dein#add('Shougo/neocomplcache.vim', { 'on_ft': 'haskell' })
+    call dein#add('flowtype/vim-flow', { 'on_ft': 'javascript' })
 
-" Language specific stuff
-call dein#add('yogsototh/haskell-vim', { 'on_ft': 'haskell' })
-call dein#add('eagletmt/neco-ghc', { 'on_ft': 'haskell' })
-call dein#add('parsonsmatt/intero-neovim', { 'on_ft': 'haskell' })
-call dein#add('Shougo/neocomplcache.vim', { 'on_ft': 'haskell' })
-call dein#add('flowtype/vim-flow', { 'on_ft': 'javascript' })
+    call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
+    call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
+    call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
+    call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
 
-call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
-call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
-call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
-call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
-
-" Required:
-call dein#end()
-
-" Required:
-filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
+  call dein#end()
+  call dein#save_state()
 endif
 
 "End dein Scripts-------------------------
