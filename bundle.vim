@@ -41,7 +41,7 @@ call dein#add('christoomey/vim-tmux-navigator')
 " Neovim-specific
 call dein#add('w0rp/ale.git')
 call dein#add('roxma/nvim-completion-manager')
-call dein#add('mhartington/nvim-typescript')
+" call dein#add('mhartington/nvim-typescript')
 
 " Typescript highlighting
 call dein#add('HerringtonDarkholme/yats.vim')
@@ -67,9 +67,6 @@ call dein#add('ferreum/vim-fish', { 'on_ft': 'fish' })
 call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
 call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
 call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
-
-call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-call dein#add('junegunn/fzf.vim')
 
 " Required:
 call dein#end()

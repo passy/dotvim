@@ -306,9 +306,6 @@ autocmd FileType yaml setlocal shiftwidth=2 textwidth=0 softtabstop=2
 " Git commits
 autocmd FileType gitcommit setlocal textwidth=72
 
-" ToggleBG
-call togglebg#map("<F5>")
-
 " =============
 " Personal crap
 " =============
