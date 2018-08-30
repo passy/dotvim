@@ -36,10 +36,16 @@ if dein#load_state('~/.config/nvim/bundle')
     " Tmux integrations
     call dein#add('wellle/tmux-complete.vim')
     call dein#add('christoomey/vim-tmux-navigator')
+    call dein#add('roxma/vim-tmux-clipboard')
 
     " Neovim-specific
     call dein#add('w0rp/ale.git')
+    call dein#add('roxma/nvim-yarp')
     call dein#add('ncm2/ncm2')
+    call dein#add('ncm2/ncm2-tmux')
+    call dein#add('ncm2/ncm2-github')
+    call dein#add('ncm2/ncm2-path')
+    call dein#add('ncm2/ncm2-bufword')
     " call dein#add('mhartington/nvim-typescript')
 
     " Typescript highlighting

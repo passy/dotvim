@@ -240,6 +240,9 @@ let g:netrw_list_hide = '.*\.py[co]$'
 " Load plugins
 source ~/.config/nvim/bundle.vim
 
+" Enable syntax highlighting and file detection after bundle was loaded.
+filetype plugin indent on
+
 " This messes up stuff badly if not set in my terminal emu
 " Sensible comes with an foolish default of 100, tho
 set timeoutlen=1000 ttimeoutlen=0
