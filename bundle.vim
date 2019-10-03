@@ -32,6 +32,8 @@ if dein#load_state('~/.config/nvim/bundle')
     call dein#add('vim-scripts/CountJump')
     " Jump, jump, jump, jump around!
     call dein#add('easymotion/vim-easymotion')
+    " Licenses
+    call dein#add('antoyo/vim-licenses')
 
     " Tmux integrations
     call dein#add('wellle/tmux-complete.vim')
