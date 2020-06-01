@@ -178,13 +178,11 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
-" fzf
-nnoremap <leader>p :History<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>t :Files<CR>
-
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+
+" fzf
+map <C-F> :FZF<cr>
 
 " Use jsxhint instead of the pure jshint for XML madness
 let g:syntastic_javascript_jshint_exec = "jsxhint"

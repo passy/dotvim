@@ -13,6 +13,8 @@ if dein#load_state('~/.config/nvim/bundle')
     call dein#add('tpope/vim-markdown')
     call dein#add('tpope/vim-surround')
 
+    call dein#add('junegunn/fzf')
+
     call dein#add('kana/vim-smartinput')
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-textobj-indent')
@@ -74,6 +76,7 @@ if dein#load_state('~/.config/nvim/bundle')
     call dein#add('cespare/vim-toml', { 'on_ft': 'toml' })
     call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
     call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
+    call dein#add('vmchale/dhall-vim', { 'on_ft': 'dhall' })
 
   call dein#end()
   call dein#save_state()
