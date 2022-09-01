@@ -77,6 +77,7 @@ if dein#load_state('~/.config/nvim/bundle')
     call dein#add('rust-lang/rust.vim', { 'on_ft': 'rust' })
     call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
     call dein#add('vmchale/dhall-vim', { 'on_ft': 'dhall' })
+    call dein#add('jvirtanen/vim-hcl')
 
   call dein#end()
   call dein#save_state()
